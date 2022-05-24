@@ -7,6 +7,34 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// Solution 1
+// function palindrome(str) {
+//   if(str.split('').reverse().join('') === str){
+//     return true
+//   }else return false
+// }
+
+// Solution 1 - cleaner //
+function palindrome(str) {
+  const reversed = str.split('').reverse().join('')
+  
+  return str === reversed
+}
+
+
+//Solution 2 not ideal //
+//using the every array method, comparing the last to frist and first to last, not the best way because its doing twice the amount of work 
+function palindrome(str) {
+    return str.split('').every((char, i)=> {
+      return char === str[str.length - i -1]
+      //advanced array helper every 
+      //every takes in the character and the index i 
+    
+
+    })
+  }
+
+
+
 
 module.exports = palindrome;
